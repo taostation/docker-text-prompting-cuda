@@ -3,6 +3,7 @@ FROM pytorch/pytorch:1.13.1-cuda11.6-cudnn8-devel
 
 # Build arguments
 ARG BRANCH=master
+WORKDIR /
 
 # install tools and dependencies
 RUN ls && apt update && \
