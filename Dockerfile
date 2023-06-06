@@ -18,5 +18,4 @@ RUN apt update && \
 
 # Start inside the bittensor git folder
 WORKDIR /validators
-ENTRYPOINT ["python3", "openvalidators/neuron.py"]
 
