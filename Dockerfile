@@ -9,13 +9,14 @@ WORKDIR /
 RUN apt update && \
   apt upgrade -y && \
   apt install -y python3 python3-pip gcc python3-dev cargo git g++ cmake make curl && \
-  git clone -b $BRANCH https://github.com/opentensor/validators.git && \
-  cd validators && \
+  git clone -b $BRANCH https://github.com/opentensor/text-prompting.git && \
+  cd text-prompting && \
+  pip3 install -r requirements.txt && \
   pip3 install -e . && \
   apt purge -y gcc python3-dev cargo git g++ cmake make curl && \
   apt -y autoremove && \
   rm -rf /var/lib/apt/lists/*
 
 # Start inside the bittensor git folder
-WORKDIR /validators
+WORKDIR /text-prompting
 
